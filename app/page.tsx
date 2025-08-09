@@ -24,9 +24,16 @@ export default function Home() {
           </div>
           <div className="font-semibold tracking-wide">LikeMind</div>
           {/* CHANGED: simple red text, smaller size, no shape */}
-          <span className="ml-2 text-xs text-[#E11D2F] font-medium tracking-wide">
-            Steel Sharpens Steel
-          </span>
+          <span
+  className="ml-2 text-xs text-[#E11D2F] font-medium tracking-wide relative
+             after:content-[''] after:absolute after:left-0 after:-bottom-0.5
+             after:h-px after:w-full after:bg-[#E11D2F]
+             after:scale-x-0 after:origin-left
+             after:transition-transform after:duration-300
+             hover:after:scale-x-100"
+>
+  Steel Sharpens Steel
+</span>
         </div>
 
         {/* Hero */}
