@@ -23,24 +23,13 @@ export default function Home() {
             <span className="font-black">L</span>
           </div>
           <div className="font-semibold tracking-wide">LikeMind</div>
-          {/* CHANGED: simple red text, smaller size, no shape */}
-          <span
-  className="ml-2 text-xs text-[#E11D2F] font-medium tracking-wide relative
-             after:content-[''] after:absolute after:left-0 after:-bottom-0.5
-             after:h-px after:w-full after:bg-[#E11D2F]
-             after:scale-x-0 after:origin-left
-             after:transition-transform after:duration-300
-             hover:after:scale-x-100"
->
-  Steel Sharpens Steel
-</span>
         </div>
 
         {/* Hero */}
         <section className="mt-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Find your allies. <span className="text-[#E11D2F]">Win your goals.</span>
+              Find your allies. <span className="text-[#E11D2F]">Win your <span className="lm-underline">goals</span>.</span>
             </h1>
             <p className="mt-4 max-w-xl text-white/80">
               LikeMind matches you with accountability partners near you. No fluff. No endless scrolling.
@@ -58,7 +47,7 @@ export default function Home() {
                 name="email"
                 required
                 placeholder="you@example.com"
-                className="flex-1 h-12 rounded-lg bg-[#0E0F12] border border-white/15 px-3 outline-none focus:border-[#E11D2F]"
+                className="lm-glow flex-1 h-12 rounded-lg bg-[#0E0F12] border border-white/15 px-3 outline-none focus:border-[#E11D2F]"
               />
               <button
                 type="submit"
