@@ -1,4 +1,13 @@
+"use client"
+import { useEffect } from 'react'
+
 export default function Home() {
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.classList.add('lm-ready')
+      return () => document.documentElement.classList.remove('lm-ready')
+    }
+  }, [])
   return (
     <main className="min-h-screen relative overflow-hidden text-[#F3F4F6]">
       {/* Background */}
