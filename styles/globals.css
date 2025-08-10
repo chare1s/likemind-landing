@@ -7,6 +7,38 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 
 /* Brand helpers */
 .brand-text-gradient { background: linear-gradient(90deg, #E11D2F, #ff4d5e, #E11D2F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* Headline red gradient for "Win your goals" */
+.headline-accent {
+  background-image: linear-gradient(90deg,
+    #E11D2F 0%,
+    #ff4d5e 50%,
+    #ff7a86 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent; /* Safari */
+  background-size: 100% 100%;
+  background-position: 0% 50%;
+}
+
+/* Slightly deeper variant (optional) */
+.headline-accent-strong {
+  background-image: linear-gradient(90deg,
+    #C81627 0%,
+    #E11D2F 25%,
+    #ff4d5e 55%,
+    #C81627 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Subtle text edge to keep thick display fonts crisp on dark bg */
+.headline-edge {
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
 .brand-card { background: linear-gradient(145deg, rgba(28,33,40,0.75), rgba(14,15,18,0.9)); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
 
 /* Hex badge utility (optional reuse) */
@@ -24,22 +56,8 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 }
 
 .lm-underline::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 100%;
-  bottom: 0;                  /* was -2px — keeping inside the line box */
-  height: 0.12em;             /* scales with font size */
-  transform: translateY(0.18em) scaleX(0); /* sits just under baseline */
-  background: #E11D2F;
-  transform-origin: left;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  will-change: transform;
-}
-
-.lm-underline:hover::after {
-  transform: scaleX(1);
+  content: none !important;
+  display: none !important;
 }
 
 /* LikeMind: Leaderboard styling */
