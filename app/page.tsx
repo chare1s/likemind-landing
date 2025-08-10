@@ -38,7 +38,9 @@ export default function Home() {
         <section className="mt-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
-              Find your allies. <span className="text-[#E11D2F]">Win your <span className="lm-underline">goals</span>.</span>
+              Find your allies.{" "}
+              <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent">Win your </span>
+              <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent lm-underline">goals</span>.
             </h1>
             <p className="mt-4 max-w-xl text-white/80">
               LikeMind matches you with accountability partners near you. No fluff. No endless scrolling.
@@ -74,7 +76,12 @@ export default function Home() {
           </div>
 
           {/* Mission Panel: Recon + Leaderboard (unified) */}
-          <div className="rounded-2xl bg-[#1C2128]/70 border border-white/10 p-4 md:p-5 shadow-[0_0_30px_rgba(225,29,47,0.08)]">
+          <div
+            className="rounded-2xl border border-white/10 p-4 md:p-5 shadow-[0_0_30px_rgba(225,29,47,0.08)]"
+            style={{
+          background: 'linear-gradient(145deg, rgba(225,29,47,0.08) 0%, rgba(28,33,40,0.75) 100%)'
+            }}
+          >
             {/* Panel Header */}
             <div className="flex items-center justify-between">
               <h3 className="font-bold">Mission Control</h3>
@@ -91,7 +98,7 @@ export default function Home() {
               <div className="relative aspect-[4/3]">
                 {/* Base map image */}
                 <img src="/map-placeholder.png" alt="Map preview" className="absolute inset-0 h-full w-full object-cover" />
-                <div className="absolute inset-0 bg-black opacity-20" />
+                <div className="absolute inset-0 bg-black opacity-10" />
 
                 {/* Ally pins overlay */}
                 <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
@@ -138,47 +145,74 @@ export default function Home() {
                 <h4 className="font-semibold">Local Leaderboard</h4>
                 <span className="text-xs text-white/60">Top Streaks</span>
               </div>
+
+              {/* XP legend */}
+              <p className="mt-1 text-[11px] text-white/50">
+                Earn points by sessions, streaks, and hosting missions.
+              </p>
+
               <ul className="mt-3 space-y-2">
                 {/* #1 */}
-                <li className="leaderboard-entry leaderboard-rank-1 flex items-center justify-between gap-3 px-2 py-2">
-                  <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-[#E11D2F] grid place-content-center text-xs font-bold">1</div>
-                    <div>
-                      <div className="font-medium">Ben</div>
-                      <div className="text-xs text-white/60">Running • Iron Will</div>
+                <li className="leaderboard-entry leaderboard-rank-1 flex flex-col gap-2 px-2 py-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-full bg-[#E11D2F] grid place-content-center text-xs font-bold">1</div>
+                      <div>
+                        <div className="font-medium">Ben</div>
+                        <div className="text-xs text-white/60">Running • Iron Will</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <span className="leaderboard-stat">Streak 18d</span>
+                      <span className="leaderboard-stat">Missions 12</span>
+                      <span className="leaderboard-xp">1,240 XP</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="leaderboard-stat">Streak 18d</span>
-                    <span className="leaderboard-stat">Missions 12</span>
+                  {/* Progress to next rank */}
+                  <div className="xp-bar">
+                    <div className="xp-fill" style={{ width: '72%' }} />
                   </div>
                 </li>
+
                 {/* #2 */}
-                <li className="leaderboard-entry leaderboard-rank-2 flex items-center justify-between gap-3 px-2 py-2">
-                  <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">2</div>
-                    <div>
-                      <div className="font-medium">Marcus</div>
-                      <div className="text-xs text-white/60">Running • Marathon Mind</div>
+                <li className="leaderboard-entry leaderboard-rank-2 flex flex-col gap-2 px-2 py-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-full bg-[#C0C0C0] grid place-content-center text-xs font-bold">2</div>
+                      <div>
+                        <div className="font-medium">Marcus</div>
+                        <div className="text-xs text-white/60">Running • Marathon Mind</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <span className="leaderboard-stat">Streak 12d</span>
+                      <span className="leaderboard-stat">Missions 9</span>
+                      <span className="leaderboard-xp">980 XP</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="leaderboard-stat">Streak 12d</span>
-                    <span className="leaderboard-stat">Missions 9</span>
+                  <div className="xp-bar">
+                    <div className="xp-fill" style={{ width: '58%' }} />
                   </div>
                 </li>
+
                 {/* #3 */}
-                <li className="leaderboard-entry leaderboard-rank-3 flex items-center justify-between gap-3 px-2 py-2">
-                  <div className="flex items-center gap-3">
-                    <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">3</div>
-                    <div>
-                      <div className="font-medium">Nathan</div>
-                      <div className="text-xs text-white/60">Study • Scholar at Arms</div>
+                <li className="leaderboard-entry leaderboard-rank-3 flex flex-col gap-2 px-2 py-2">
+                  <div className="flex items-center justify-between gap-3">
+                    <div className="flex items-center gap-3">
+                      <div className="h-8 w-8 rounded-full bg-[#C0C0C0] grid place-content-center text-xs font-bold">3</div>
+                      <div>
+                        <div className="font-medium">Nathan</div>
+                        <div className="text-xs text-white/60">Study • Scholar at Arms</div>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 text-xs">
+                      <span className="leaderboard-stat">Streak 9d</span>
+                      <span className="leaderboard-stat">Missions 7</span>
+                      <span className="leaderboard-xp">740 XP</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 text-xs">
-                    <span className="leaderboard-stat">Streak 9d</span>
-                    <span className="leaderboard-stat">Missions 7</span>
+                  <div className="xp-bar">
+                    <div className="xp-fill" style={{ width: '44%' }} />
                   </div>
                 </li>
               </ul>
