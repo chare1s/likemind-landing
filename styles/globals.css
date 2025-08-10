@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+:focus-visible { outline: 2px solid #E11D2F; outline-offset: 2px; }
+
+/* Brand helpers */
+.brand-text-gradient { background: linear-gradient(90deg, #E11D2F, #ff4d5e, #E11D2F); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.brand-card { background: linear-gradient(145deg, rgba(28,33,40,0.75), rgba(14,15,18,0.9)); border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 30px rgba(0,0,0,0.35); }
+
+/* Hex badge utility (optional reuse) */
+.hex { clip-path: polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%); }
+.hex-gold { background: linear-gradient(135deg, #FFD700, #FFA500); }
+
 * { box-sizing: border-box; }
 html, body { height: 100%; }
 body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, 'Helvetica Neue', Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
@@ -17,12 +28,14 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
   position: absolute;
   left: 0;
   width: 100%;
-  bottom: -2px;
-  height: 2px;
+  bottom: 0;                  /* was -2px — keeping inside the line box */
+  height: 0.12em;             /* scales with font size */
+  transform: translateY(0.18em) scaleX(0); /* sits just under baseline */
   background: #E11D2F;
   transform-origin: left;
-  transform: scaleX(0);
   transition: transform 0.3s ease;
+  pointer-events: none;
+  will-change: transform;
 }
 
 .lm-underline:hover::after {
