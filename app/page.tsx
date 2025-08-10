@@ -28,7 +28,7 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 py-20">
         {/* Logo row */}
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl bg-[#E11D2F] grid place-content-center shadow-[0_0_30px_rgba(225,29,47,0.35)]">
+          <div className="h-10 w-10 rounded-xl shadow-[0_0_30px_rgba(225,29,47,0.35)] bg-gradient-to-r from-[#F43F5E] to-[#E11D2F] grid place-content-center">
             <span className="font-black">L</span>
           </div>
           <div className="font-semibold tracking-wide">LikeMind</div>
@@ -39,8 +39,16 @@ export default function Home() {
           <div>
             <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.2]">
               Find your allies.{" "}
-              <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent">Win your </span>
-              <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent lm-underline">goals</span>.
+              <span
+                className="headline-accent headline-edge"
+                style={{
+                  background: 'linear-gradient(90deg, #D73248, #E11D2F)',
+                  WebkitBackgroundClip: 'text',
+                  color: 'transparent',
+                  WebkitTextFillColor: 'transparent',
+                  opacity: 1
+                }}
+              >Win your goals.</span>
             </h1>
             <p className="mt-4 max-w-xl text-white/80">
               LikeMind matches you with accountability partners near you. No fluff. No endless scrolling.
@@ -62,7 +70,7 @@ export default function Home() {
               />
               <button
                 type="submit"
-                className="h-12 px-6 rounded-lg bg-[#E11D2F] hover:bg-[#c81829]"
+                className="h-12 px-6 rounded-lg bg-gradient-to-r from-[#D73248] to-[#E11D2F] hover:brightness-90 transition"
               >
                 Join waitlist
               </button>
@@ -104,6 +112,13 @@ export default function Home() {
                 <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
                   {/* Running event */}
                   <g>
+                    <circle
+                      cx="102"
+                      cy="122"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                    />
                     <text
                       x="102"
                       y="122"
@@ -114,19 +129,34 @@ export default function Home() {
                   </g>
                   {/* Strength event */}
                   <g>
-                    <text
-                      x="255"
-                      y="170"
-                      fontSize="20"
-                      textAnchor="middle"
-                      dominantBaseline="middle"
-                    >🏋️</text>
+                    <circle
+                      cx="255"
+                      cy="170"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                    />
+                    <image
+                      href="/points-icon.png"
+                      x="245"
+                      y="160"
+                      width="20"
+                      height="20"
+                      style={{ filter: 'invert(1)' }}
+                    />
                   </g>
                   {/* Study event */}
                   <g>
+                    <circle
+                      cx="307"
+                      cy="96"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                    />
                     <text
                       x="307"
-                      y="97"
+                      y="99"
                       fontSize="20"
                       textAnchor="middle"
                       dominantBaseline="middle"
@@ -167,7 +197,7 @@ export default function Home() {
                       <div
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
-                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
@@ -196,7 +226,7 @@ export default function Home() {
                       <div
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
-                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
@@ -224,7 +254,7 @@ export default function Home() {
                       <div
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
-                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
