@@ -25,7 +25,7 @@ export default function Home() {
         style={{ background: 'radial-gradient(closest-side, rgba(225,29,47,0.35), transparent 70%)' }}
       />
 
-      <div className="max-w-5xl mx-auto px-6 py-20">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20">
         {/* Logo row */}
         <div className="flex items-center gap-3">
           <div className="h-10 w-10 rounded-xl shadow-[0_0_30px_rgba(225,29,47,0.35)] bg-gradient-to-r from-[#F43F5E] to-[#E11D2F] grid place-content-center">
@@ -35,22 +35,40 @@ export default function Home() {
         </div>
 
         {/* Hero */}
-        <section className="mt-14 grid md:grid-cols-2 gap-10 items-center">
+        <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
           <div>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.2]">
-              Find your allies.{" "}
-              <span
-                className="headline-accent headline-edge"
-                style={{
-                  background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  WebkitTextFillColor: 'transparent',
-                  opacity: 1
-                }}
-              >Win your goals.</span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-none">
+              <span className="block">Find your allies.</span>
+              {/* spacer line between lines */}
+              <span aria-hidden className="mt-4 mb-5 block h-[2px] w-28 bg-white/10 rounded-full"></span>
+              <span className="block">
+                <span
+                  className="headline-accent headline-edge"
+                  style={{
+                    background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    WebkitTextFillColor: 'transparent',
+                    opacity: 1,
+                    textShadow: '0 0 8px rgba(225,29,47,0.5), 0 0 16px rgba(225,29,47,0.35)',
+                    fontWeight: 'normal'
+                  }}
+                >Win your </span>
+                <span
+                  className="headline-accent headline-edge"
+                  style={{
+                    background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
+                    WebkitBackgroundClip: 'text',
+                    color: 'transparent',
+                    WebkitTextFillColor: 'transparent',
+                    opacity: 1,
+                    textShadow: '0 0 8px rgba(225,29,47,0.5), 0 0 16px rgba(225,29,47,0.35)',
+                    fontWeight: 'bold'
+                  }}
+                >goals.</span>
+              </span>
             </h1>
-            <p className="mt-4 max-w-xl text-white/80">
+            <p className="mt-6 max-w-2xl text-white/80 text-lg">
               LikeMind matches you with accountability partners near you. No fluff. No endless scrolling.
               Just progress with people who move like you do.
             </p>
@@ -59,7 +77,7 @@ export default function Home() {
             <form
               action="https://formspree.io/f/mwpqavqa"
               method="POST"
-              className="mt-6 flex gap-3"
+              className="mt-8 flex gap-4"
             >
               <input
                 type="email"
@@ -110,6 +128,11 @@ export default function Home() {
 
                 {/* Ally pins overlay */}
                 <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
+                  <defs>
+                    <filter id="toWhite" colorInterpolationFilters="sRGB">
+                      <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0" />
+                    </filter>
+                  </defs>
                   {/* Running event */}
                   <g>
                     <circle
@@ -136,14 +159,14 @@ export default function Home() {
                       fill="#E11D2F"
                       opacity="0.6"
                     />
-                    <image
-                      href="/points-icon.png"
-                      x="245"
-                      y="160"
-                      width="20"
-                      height="20"
-                      style={{ filter: 'invert(1)' }}
-                    />
+                  <image
+                    href="/points-icon2.png"
+                    x="245"
+                    y="160"
+                    width="20"
+                    height="20"
+                    filter="url(#toWhite)"
+                  />
                   </g>
                   {/* Study event */}
                   <g>
@@ -173,7 +196,7 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-between">
                 <h4 className="font-semibold">Local Leaderboard</h4>
-                <span className="text-xs text-white/60">Top Streaks</span>
+                <span className="text-xs text-white/60">Top Points</span>
               </div>
 
               {/* XP legend */}
@@ -201,7 +224,7 @@ export default function Home() {
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
-                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
                       </div>
                     </div>
                   </div>
@@ -230,7 +253,7 @@ export default function Home() {
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
-                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
                       </div>
                     </div>
                   </div>
@@ -258,7 +281,7 @@ export default function Home() {
                           clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
                         }}
                       >
-                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
                       </div>
                     </div>
                   </div>
