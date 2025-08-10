@@ -93,7 +93,7 @@ export default function Home() {
                 <img src="/map-placeholder.png" alt="Map preview" className="absolute inset-0 h-full w-full object-cover" />
 
                 {/* Grid overlay */}
-                <svg className="absolute inset-0 h-full w-full opacity-30 pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
+                <svg className="absolute inset-0 h-full w-full opacity-60 pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
                   {Array.from({ length: 30 }).map((_, i) => (
                     <line key={`v-${i}`} x1={i * 14} x2={i * 14} y1="0" y2="300" stroke="#2C3440" strokeWidth="1" />
                   ))}
@@ -109,10 +109,13 @@ export default function Home() {
                     <circle cx="112" cy="118" r="10" fill="#E11D2F" opacity="0.95" />
                     <circle cx="112" cy="118" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
                   </g>
-                  {/* Secondary allies (green-toned) */}
                   <g>
-                    <circle cx="255" cy="165" r="7" fill="#3B4A3F" opacity="0.95" />
-                    <circle cx="307" cy="92" r="7" fill="#3B4A3F" opacity="0.95" />
+                    <circle cx="255" cy="165" r="10" fill="#E11D2F" opacity="0.95" />
+                    <circle cx="255" cy="165" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
+                  </g>
+                  <g>
+                    <circle cx="307" cy="92" r="10" fill="#E11D2F" opacity="0.95" />
+                    <circle cx="307" cy="92" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
                   </g>
                 </svg>
               </div>
@@ -133,7 +136,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-[#E11D2F] grid place-content-center text-xs font-bold">1</div>
                     <div>
-                      <div className="font-medium">Atlas</div>
+                      <div className="font-medium">Ben</div>
                       <div className="text-xs text-white/60">Strength • 05:00 pact</div>
                     </div>
                   </div>
@@ -147,7 +150,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">2</div>
                     <div>
-                      <div className="font-medium">Rook</div>
+                      <div className="font-medium">Marcus</div>
                       <div className="text-xs text-white/60">Running • 10K prep</div>
                     </div>
                   </div>
@@ -161,7 +164,7 @@ export default function Home() {
                   <div className="flex items-center gap-3">
                     <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">3</div>
                     <div>
-                      <div className="font-medium">Sable</div>
+                      <div className="font-medium">Nathan</div>
                       <div className="text-xs text-white/60">Study • Night shift</div>
                     </div>
                   </div>
