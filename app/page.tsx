@@ -91,31 +91,39 @@ export default function Home() {
               <div className="relative aspect-[4/3]">
                 {/* Base map image */}
                 <img src="/map-placeholder.png" alt="Map preview" className="absolute inset-0 h-full w-full object-cover" />
-
-                {/* Grid overlay */}
-                <svg className="absolute inset-0 h-full w-full opacity-60 pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
-                  {Array.from({ length: 30 }).map((_, i) => (
-                    <line key={`v-${i}`} x1={i * 14} x2={i * 14} y1="0" y2="300" stroke="#2C3440" strokeWidth="1" />
-                  ))}
-                  {Array.from({ length: 22 }).map((_, i) => (
-                    <line key={`h-${i}`} y1={i * 14} y2={i * 14} x1="0" x2="400" stroke="#2C3440" strokeWidth="1" />
-                  ))}
-                </svg>
+                <div className="absolute inset-0 bg-black opacity-20" />
 
                 {/* Ally pins overlay */}
                 <svg className="absolute inset-0 h-full w-full pointer-events-none" viewBox="0 0 400 300" preserveAspectRatio="none">
-                  {/* Primary ally (red) */}
+                  {/* Running event */}
                   <g>
-                    <circle cx="112" cy="118" r="10" fill="#E11D2F" opacity="0.95" />
-                    <circle cx="112" cy="118" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
+                    <text
+                      x="102"
+                      y="122"
+                      fontSize="20"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >👟</text>
                   </g>
+                  {/* Strength event */}
                   <g>
-                    <circle cx="255" cy="165" r="10" fill="#E11D2F" opacity="0.95" />
-                    <circle cx="255" cy="165" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
+                    <text
+                      x="255"
+                      y="170"
+                      fontSize="20"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >🏋️</text>
                   </g>
+                  {/* Study event */}
                   <g>
-                    <circle cx="307" cy="92" r="10" fill="#E11D2F" opacity="0.95" />
-                    <circle cx="307" cy="92" r="16" fill="none" stroke="#E11D2F" strokeOpacity="0.35" strokeWidth="2" />
+                    <text
+                      x="307"
+                      y="97"
+                      fontSize="20"
+                      textAnchor="middle"
+                      dominantBaseline="middle"
+                    >📚</text>
                   </g>
                 </svg>
               </div>
@@ -137,7 +145,7 @@ export default function Home() {
                     <div className="h-8 w-8 rounded-full bg-[#E11D2F] grid place-content-center text-xs font-bold">1</div>
                     <div>
                       <div className="font-medium">Ben</div>
-                      <div className="text-xs text-white/60">Strength • 05:00 pact</div>
+                      <div className="text-xs text-white/60">Running • Iron Will</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs">
@@ -151,7 +159,7 @@ export default function Home() {
                     <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">2</div>
                     <div>
                       <div className="font-medium">Marcus</div>
-                      <div className="text-xs text-white/60">Running • 10K prep</div>
+                      <div className="text-xs text-white/60">Running • Marathon Mind</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs">
@@ -165,7 +173,7 @@ export default function Home() {
                     <div className="h-8 w-8 rounded-full bg-[#2C3440] grid place-content-center text-xs font-bold">3</div>
                     <div>
                       <div className="font-medium">Nathan</div>
-                      <div className="text-xs text-white/60">Study • Night shift</div>
+                      <div className="text-xs text-white/60">Study • Scholar at Arms</div>
                     </div>
                   </div>
                   <div className="flex items-center gap-2 text-xs">
