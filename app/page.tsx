@@ -37,7 +37,7 @@ export default function Home() {
         {/* Hero */}
         <section className="mt-14 grid md:grid-cols-2 gap-10 items-center">
           <div>
-            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-[1.2]">
               Find your allies.{" "}
               <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent">Win your </span>
               <span className="bg-gradient-to-r from-[#E11D2F] via-[#ff4d5e] to-[#E11D2F] bg-clip-text text-transparent lm-underline">goals</span>.
@@ -162,10 +162,17 @@ export default function Home() {
                         <div className="text-xs text-white/60">Running • Iron Will</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="leaderboard-stat">Streak 18d</span>
-                      <span className="leaderboard-stat">Missions 12</span>
-                      <span className="leaderboard-xp">1,240 XP</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-semibold text-sm">24</span>
+                      <div
+                        className="h-8 w-8 grid place-content-center text-black"
+                        style={{
+                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                        }}
+                      >
+                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                      </div>
                     </div>
                   </div>
                   {/* Progress to next rank */}
@@ -178,16 +185,23 @@ export default function Home() {
                 <li className="leaderboard-entry leaderboard-rank-2 flex flex-col gap-2 px-2 py-2">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-[#C0C0C0] grid place-content-center text-xs font-bold">2</div>
+                      <div className="h-8 w-8 rounded-full bg-[#2F353D] grid place-content-center text-xs font-bold">2</div>
                       <div>
                         <div className="font-medium">Marcus</div>
                         <div className="text-xs text-white/60">Running • Marathon Mind</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="leaderboard-stat">Streak 12d</span>
-                      <span className="leaderboard-stat">Missions 9</span>
-                      <span className="leaderboard-xp">980 XP</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-semibold text-sm">18</span>
+                      <div
+                        className="h-8 w-8 grid place-content-center text-black"
+                        style={{
+                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                        }}
+                      >
+                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                      </div>
                     </div>
                   </div>
                   <div className="xp-bar">
@@ -199,16 +213,23 @@ export default function Home() {
                 <li className="leaderboard-entry leaderboard-rank-3 flex flex-col gap-2 px-2 py-2">
                   <div className="flex items-center justify-between gap-3">
                     <div className="flex items-center gap-3">
-                      <div className="h-8 w-8 rounded-full bg-[#C0C0C0] grid place-content-center text-xs font-bold">3</div>
+                      <div className="h-8 w-8 rounded-full bg-[#2F353D] grid place-content-center text-xs font-bold">3</div>
                       <div>
                         <div className="font-medium">Nathan</div>
                         <div className="text-xs text-white/60">Study • Scholar at Arms</div>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 text-xs">
-                      <span className="leaderboard-stat">Streak 9d</span>
-                      <span className="leaderboard-stat">Missions 7</span>
-                      <span className="leaderboard-xp">740 XP</span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-white font-semibold text-sm">13</span>
+                      <div
+                        className="h-8 w-8 grid place-content-center text-black"
+                        style={{
+                          background: 'linear-gradient(135deg, #FFD700, #FFA500)',
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                        }}
+                      >
+                        <img src="/points-icon.png" alt="Points" className="h-4 w-4 object-contain" />
+                      </div>
                     </div>
                   </div>
                   <div className="xp-bar">
