@@ -264,6 +264,16 @@ export default function Home() {
                       <feColorMatrix type="saturate" values="0" />
                       <feBlend in="SourceGraphic" in2="noise" mode="overlay" />
                     </filter>
+                    {/* Red Glow filter */}
+                    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%" colorInterpolationFilters="sRGB">
+                      <feFlood floodColor="#E11D2F" floodOpacity="0.85" result="flood" />
+                      <feComposite in="flood" in2="SourceAlpha" operator="in" result="mask" />
+                      <feGaussianBlur in="mask" stdDeviation="4" result="blur" />
+                      <feMerge>
+                        <feMergeNode in="blur" />
+                        <feMergeNode in="SourceGraphic" />
+                      </feMerge>
+                    </filter>
                   </defs>
                   {/* Running event */}
                   <g>
@@ -272,8 +282,8 @@ export default function Home() {
                       cy="122"
                       r="15"
                       fill="#E11D2F"
-                      opacity="0.6"
-                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                      opacity="0.9"
+                      filter="url(#redGlow)"
                     />
                     <text
                       x="102"
@@ -290,8 +300,8 @@ export default function Home() {
                       cy="170"
                       r="15"
                       fill="#E11D2F"
-                      opacity="0.6"
-                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                      opacity="0.9"
+                      filter="url(#redGlow)"
                     />
                     <image
                       href="/points-icon2.png"
@@ -309,8 +319,8 @@ export default function Home() {
                       cy="96"
                       r="15"
                       fill="#E11D2F"
-                      opacity="0.6"
-                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                      opacity="0.9"
+                      filter="url(#redGlow)"
                     />
                     <text
                       x="307"
@@ -362,15 +372,17 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-white font-semibold text-sm">24</span>
-                      <div
-                        className="h-8 w-8 grid place-content-center text-black"
-                        style={{
-                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
-                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
-                        }}
-                      >
-                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                      <div style={{ filter: 'drop-shadow(0 0 14px rgba(225,29,47,0.85)) drop-shadow(0 0 24px rgba(225,29,47,0.55))' }}>
+                        <div
+                          className="h-8 w-8 grid place-content-center text-black"
+                          style={{
+                            background: 'linear-gradient(90deg, #D73248, #E11D2F)',
+                            clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                            boxShadow: '0 0 12px rgba(225,29,47,0.8), 0 0 20px rgba(225,29,47,0.6)'
+                          }}
+                        >
+                          <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -395,15 +407,17 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-white font-semibold text-sm">18</span>
-                      <div
-                        className="h-8 w-8 grid place-content-center text-black"
-                        style={{
-                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
-                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
-                        }}
-                      >
-                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                      <div style={{ filter: 'drop-shadow(0 0 14px rgba(225,29,47,0.85)) drop-shadow(0 0 24px rgba(225,29,47,0.55))' }}>
+                        <div
+                          className="h-8 w-8 grid place-content-center text-black"
+                          style={{
+                            background: 'linear-gradient(90deg, #D73248, #E11D2F)',
+                            clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                            boxShadow: '0 0 12px rgba(225,29,47,0.8), 0 0 20px rgba(225,29,47,0.6)'
+                          }}
+                        >
+                          <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -427,15 +441,17 @@ export default function Home() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-white font-semibold text-sm">13</span>
-                      <div
-                        className="h-8 w-8 grid place-content-center text-black"
-                        style={{
-                          background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
-                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
-                        }}
-                      >
-                        <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                      <div style={{ filter: 'drop-shadow(0 0 14px rgba(225,29,47,0.85)) drop-shadow(0 0 24px rgba(225,29,47,0.55))' }}>
+                        <div
+                          className="h-8 w-8 grid place-content-center text-black"
+                          style={{
+                            background: 'linear-gradient(90deg, #D73248, #E11D2F)',
+                            clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                            boxShadow: '0 0 12px rgba(225,29,47,0.8), 0 0 20px rgba(225,29,47,0.6)'
+                          }}
+                        >
+                          <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
+                        </div>
                       </div>
                     </div>
                   </div>
