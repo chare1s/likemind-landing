@@ -125,6 +125,10 @@ export default function Home() {
               className="h-28 w-auto object-contain"
               decoding="async"
               fetchPriority="high"
+              style={{
+                /* Subtle inner white glow + faint outer red halo + light base shadow */
+                filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25)) drop-shadow(0 0 3px rgba(255,255,255,0.35)) drop-shadow(0 0 8px rgba(225,29,47,0.22))'
+              }}
               onError={(e) => {
                 const img = e.currentTarget as HTMLImageElement;
                 // 1) Try without query param in case CDN blocks it
@@ -263,7 +267,14 @@ export default function Home() {
                   </defs>
                   {/* Running event */}
                   <g>
-                    <circle cx="102" cy="122" r="15" fill="#E11D2F" opacity="0.6" />
+                    <circle
+                      cx="102"
+                      cy="122"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                    />
                     <text
                       x="102"
                       y="122"
@@ -274,7 +285,14 @@ export default function Home() {
                   </g>
                   {/* Strength event */}
                   <g>
-                    <circle cx="255" cy="170" r="15" fill="#E11D2F" opacity="0.6" />
+                    <circle
+                      cx="255"
+                      cy="170"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                    />
                     <image
                       href="/points-icon2.png"
                       x="245"
@@ -286,7 +304,14 @@ export default function Home() {
                   </g>
                   {/* Study event */}
                   <g>
-                    <circle cx="307" cy="96" r="15" fill="#E11D2F" opacity="0.6" />
+                    <circle
+                      cx="307"
+                      cy="96"
+                      r="15"
+                      fill="#E11D2F"
+                      opacity="0.6"
+                      style={{ filter: 'drop-shadow(0 0 6px rgba(225,29,47,0.6))' }}
+                    />
                     <text
                       x="307"
                       y="99"
@@ -315,7 +340,7 @@ export default function Home() {
               <div className="text-right">
                 <span
                   className="text-xs text-white font-bold"
-                  style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}
+                  style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}
                 >
                   Top Points
                 </span>
@@ -331,7 +356,7 @@ export default function Home() {
                         <div className="font-medium">Ben</div>
                         <div className="text-xs">
                           <span className="text-white/60">Running • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Iron Will</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Iron Will</span>
                         </div>
                       </div>
                     </div>
@@ -341,7 +366,8 @@ export default function Home() {
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
                           background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
                         }}
                       >
                         <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
@@ -363,7 +389,7 @@ export default function Home() {
                         <div className="font-medium">Marcus</div>
                         <div className="text-xs">
                           <span className="text-white/60">Running • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Marathon Mind</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Marathon Mind</span>
                         </div>
                       </div>
                     </div>
@@ -373,7 +399,8 @@ export default function Home() {
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
                           background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
                         }}
                       >
                         <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
@@ -394,7 +421,7 @@ export default function Home() {
                         <div className="font-medium">Nathan</div>
                         <div className="text-xs">
                           <span className="text-white/60">Study • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Discipline Driven</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Discipline Driven</span>
                         </div>
                       </div>
                     </div>
@@ -404,7 +431,8 @@ export default function Home() {
                         className="h-8 w-8 grid place-content-center text-black"
                         style={{
                           background: 'linear-gradient(90deg, #D73248, #E11D2F)',
-                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)'
+                          clipPath: 'polygon(25% 6.7%, 75% 6.7%, 100% 50%, 75% 93.3%, 25% 93.3%, 0% 50%)',
+                          boxShadow: '0 0 8px rgba(225,29,47,0.6), 0 0 16px rgba(225,29,47,0.35)'
                         }}
                       >
                         <img src="/points-icon2.png" alt="Points" className="h-4 w-4 object-contain" />
