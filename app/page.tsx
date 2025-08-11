@@ -115,16 +115,23 @@ export default function Home() {
         style={{ background: 'radial-gradient(closest-side, rgba(225,29,47,0.35), transparent 70%)' }}
       />
 
+      {/* Top-left fixed logo overlay */}
+      <div className="fixed top-0 left-0 z-50 p-4">
+        <div className="flex items-center gap-3">
+          <img
+            src="/logo.png?v=2025-08-11-1"
+            alt="LikeMind logo"
+            className="h-28 object-contain"
+          />
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20">
         {/* Logo row */}
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl shadow-[0_0_30px_rgba(225,29,47,0.35)] shadow-[0_0_20px_rgba(225,29,47,0.6)] bg-gradient-to-r from-[#F43F5E] to-[#E11D2F] grid place-content-center">
-            <span className="font-black">L</span>
-          </div>
-          <div className="font-semibold tracking-wide">LikeMind</div>
-        </div>
+        {/* (Logo now absolutely positioned, so this row can be empty or removed for spacing if needed) */}
 
         {/* Hero */}
+        <div className="w-full aspect-[16/9]">
         <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
           <div>
             <h1 className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
@@ -380,6 +387,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        </div>
 
         {/* Footer */}
         <footer className="mt-20 border-t border-white/5 pt-8 text-white/70 text-sm">
