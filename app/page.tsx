@@ -118,11 +118,32 @@ export default function Home() {
       {/* Top-left fixed logo overlay */}
       <div className="fixed top-0 left-0 z-50 p-4">
         <div className="flex items-center gap-3">
-          <img
-            src="/logo.png?v=2025-08-11-1"
-            alt="LikeMind logo"
-            className="h-28 object-contain"
-          />
+          <div className="h-28 w-auto flex items-center">
+            <img
+              src={"/logo.png?v=" + (typeof window !== 'undefined' ? new Date().getTime() : '1')}
+              alt="LikeMind logo"
+              className="h-28 w-auto object-contain"
+              decoding="async"
+              fetchPriority="high"
+              onError={(e) => {
+                const img = e.currentTarget as HTMLImageElement;
+                // 1) Try without query param in case CDN blocks it
+                if (!img.dataset.step) { img.dataset.step = '1'; img.src = '/logo.png'; return; }
+                // 2) Try SVG variant
+                if (img.dataset.step === '1') { img.dataset.step = '2'; img.src = '/logo.svg'; return; }
+                // 3) Try alternate filename
+                if (img.dataset.step === '2') { img.dataset.step = '3'; img.src = '/logo-mark.png'; return; }
+                // 4) Final fallback: show a simple L mark
+                const parent = img.parentElement; if (parent) {
+                  img.remove();
+                  const span = document.createElement('span');
+                  span.textContent = 'L';
+                  span.className = 'inline-block h-28 w-28 rounded-xl grid place-content-center text-3xl font-black bg-gradient-to-r from-[#D73248] to-[#E11D2F] shadow-[0_0_30px_rgba(225,29,47,0.35)]';
+                  parent.appendChild(span);
+                }
+              }}
+            />
+          </div>
         </div>
       </div>
 
