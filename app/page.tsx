@@ -19,6 +19,96 @@ export default function Home() {
                        linear-gradient(180deg, #0E0F12 0%, #0E0F12 40%, #0F1318 100%)`
         }}
       />
+      {/* Abstract Blobs */}
+      <div className="pointer-events-none absolute inset-0 -z-10 w-full h-full">
+        {/* Large red blob top right */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-40 mix-blend-screen"
+          style={{
+            top: '-210px',
+            right: '-250px',
+            width: '560px',
+            height: '560px',
+            background: 'radial-gradient(circle at 60% 40%, #7A0F1A 65%, #8C1C2A 25%, #A12438 10%, transparent 100%)',
+            filter: 'blur(120px)',
+            backdropFilter: 'blur(6px)'
+          }}
+        />
+        {/* Huge red blob bottom left */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-35 mix-blend-screen"
+          style={{
+            bottom: '-250px',
+            left: '-230px',
+            width: '720px',
+            height: '720px',
+            background: 'radial-gradient(circle at 60% 60%, #8C1C2A 65%, #7A0F1A 25%, #A12438 10%, transparent 100%)',
+            filter: 'blur(140px)',
+            backdropFilter: 'blur(8px)'
+          }}
+        />
+        {/* Medium red blob left mid overlapping center */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-45 mix-blend-screen"
+          style={{
+            top: '17%',
+            left: '2%',
+            width: '320px',
+            height: '320px',
+            background: 'radial-gradient(circle at 60% 40%, #8C1C2A 60%, #7A0F1A 30%, #A12438 10%, transparent 100%)',
+            filter: 'blur(90px)',
+            backdropFilter: 'blur(6px)'
+          }}
+        />
+        {/* Medium red blob right mid overlapping center */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-38 mix-blend-screen"
+          style={{
+            bottom: '21%',
+            right: '14%',
+            width: '280px',
+            height: '280px',
+            background: 'radial-gradient(circle at 40% 60%, #8C1C2A 60%, #7A0F1A 35%, #A12438 10%, transparent 100%)',
+            filter: 'blur(80px)',
+            backdropFilter: 'blur(6px)'
+          }}
+        />
+        {/* Large red blob center left */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-32 mix-blend-screen"
+          style={{
+            top: '39%',
+            left: '20%',
+            width: '440px',
+            height: '440px',
+            background: 'radial-gradient(circle at 50% 50%, #7A0F1A 70%, #8C1C2A 20%, #A12438 10%, transparent 100%)',
+            filter: 'blur(110px)',
+            backdropFilter: 'blur(6px)'
+          }}
+        />
+        {/* Medium red blob center right */}
+        <div
+          className="absolute rounded-full blur-3xl opacity-34 mix-blend-screen"
+          style={{
+            top: '59%',
+            left: '66%',
+            width: '280px',
+            height: '280px',
+            background: 'radial-gradient(circle at 60% 60%, #8C1C2A 60%, #7A0F1A 30%, #A12438 10%, transparent 100%)',
+            filter: 'blur(90px)',
+            backdropFilter: 'blur(6px)'
+          }}
+        />
+        {/* Film grain overlay */}
+        <div
+          className="absolute inset-0 pointer-events-none mix-blend-overlay opacity-10"
+          style={{
+            backgroundImage: `url('/grain.png'), radial-gradient(circle, rgba(255,255,255,0.09) 1px, transparent 1.5px)`,
+            backgroundSize: '400px 400px, 80px 80px',
+            backgroundRepeat: 'repeat, repeat'
+          }}
+        />
+      </div>
       {/* Glow */}
       <div
         className="pointer-events-none absolute -top-20 left-1/2 -translate-x-1/2 h-[500px] w-[900px] rounded-full blur-3xl opacity-30"
@@ -28,7 +118,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto px-6 md:px-10 lg:px-16 py-20">
         {/* Logo row */}
         <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-xl shadow-[0_0_30px_rgba(225,29,47,0.35)] bg-gradient-to-r from-[#F43F5E] to-[#E11D2F] grid place-content-center">
+          <div className="h-10 w-10 rounded-xl shadow-[0_0_30px_rgba(225,29,47,0.35)] shadow-[0_0_20px_rgba(225,29,47,0.6)] bg-gradient-to-r from-[#F43F5E] to-[#E11D2F] grid place-content-center">
             <span className="font-black">L</span>
           </div>
           <div className="font-semibold tracking-wide">LikeMind</div>
@@ -37,11 +127,9 @@ export default function Home() {
         {/* Hero */}
         <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-none">
-              <span className="block">Find your allies.</span>
-              {/* spacer line between lines */}
-              <span aria-hidden className="mt-4 mb-5 block h-[2px] w-28 bg-white/10 rounded-full"></span>
-              <span className="block">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-2xl">
+              <span className="block">Find your likeminds.</span>
+              <span className="block mt-2">
                 <span
                   className="headline-accent headline-edge"
                   style={{
@@ -57,7 +145,7 @@ export default function Home() {
                 <span
                   className="headline-accent headline-edge"
                   style={{
-                    background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
+                    background: 'linear-gradient(90deg, #e33957, #b71526)',
                     WebkitBackgroundClip: 'text',
                     color: 'transparent',
                     WebkitTextFillColor: 'transparent',
@@ -77,7 +165,8 @@ export default function Home() {
             <form
               action="https://formspree.io/f/mwpqavqa"
               method="POST"
-              className="mt-8 flex gap-4"
+              className="mt-8 flex gap-4 max-w-2xl self-start"
+              style={{ alignItems: 'flex-start' }}
             >
               <input
                 type="email"
@@ -88,7 +177,7 @@ export default function Home() {
               />
               <button
                 type="submit"
-                className="h-12 px-6 rounded-lg bg-gradient-to-r from-[#D73248] to-[#E11D2F] hover:brightness-90 transition"
+                className="h-12 px-6 rounded-lg bg-gradient-to-r from-[#D73248] to-[#E11D2F] hover:brightness-90 transition shadow-[0_0_20px_rgba(225,29,47,0.6)]"
               >
                 Join waitlist
               </button>
@@ -97,6 +186,9 @@ export default function Home() {
             <p className="mt-3 text-xs text-white/60">
               By joining you agree to receive early access emails. Unsubscribe anytime.
             </p>
+
+            {/* Video placeholder */}
+            <div className="mt-8 w-full aspect-video bg-black/30"></div>
 
             {/* REMOVED: the scrolling slogan strip */}
           </div>
@@ -110,15 +202,15 @@ export default function Home() {
           >
             {/* Panel Header */}
             <div className="flex items-center justify-between">
-              <h3 className="font-bold">Mission Control</h3>
+              <h3 className="font-bold">Progress Hub</h3>
             </div>
 
             {/* Recon block */}
             <div className="mt-4 rounded-xl border border-white/10 bg-black/20 overflow-hidden">
-              <div className="flex items-center justify-between px-3 py-2 text-xs">
+              <div className="flex items-center justify-between px-3 py-2 text-xs bg-black/20">
                 <div className="flex items-center gap-2">
                   <span className="inline-block h-2 w-2 rounded-full bg-[#E11D2F]" />
-                  <span className="opacity-90">Recon online — allies detected nearby</span>
+                  <span className="opacity-90">Live now — members training nearby</span>
                 </div>
               </div>
               <div className="relative aspect-[4/3]">
@@ -132,16 +224,16 @@ export default function Home() {
                     <filter id="toWhite" colorInterpolationFilters="sRGB">
                       <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 1 0" />
                     </filter>
+                    {/* Grain texture filter */}
+                    <filter id="grainTexture" x="0" y="0" width="100%" height="100%">
+                      <feTurbulence type="fractalNoise" baseFrequency="1" numOctaves="2" result="noise" />
+                      <feColorMatrix type="saturate" values="0" />
+                      <feBlend in="SourceGraphic" in2="noise" mode="overlay" />
+                    </filter>
                   </defs>
                   {/* Running event */}
                   <g>
-                    <circle
-                      cx="102"
-                      cy="122"
-                      r="15"
-                      fill="#E11D2F"
-                      opacity="0.6"
-                    />
+                    <circle cx="102" cy="122" r="15" fill="#E11D2F" opacity="0.6" />
                     <text
                       x="102"
                       y="122"
@@ -152,31 +244,19 @@ export default function Home() {
                   </g>
                   {/* Strength event */}
                   <g>
-                    <circle
-                      cx="255"
-                      cy="170"
-                      r="15"
-                      fill="#E11D2F"
-                      opacity="0.6"
+                    <circle cx="255" cy="170" r="15" fill="#E11D2F" opacity="0.6" />
+                    <image
+                      href="/points-icon2.png"
+                      x="245"
+                      y="160"
+                      width="20"
+                      height="20"
+                      filter="url(#toWhite)"
                     />
-                  <image
-                    href="/points-icon2.png"
-                    x="245"
-                    y="160"
-                    width="20"
-                    height="20"
-                    filter="url(#toWhite)"
-                  />
                   </g>
                   {/* Study event */}
                   <g>
-                    <circle
-                      cx="307"
-                      cy="96"
-                      r="15"
-                      fill="#E11D2F"
-                      opacity="0.6"
-                    />
+                    <circle cx="307" cy="96" r="15" fill="#E11D2F" opacity="0.6" />
                     <text
                       x="307"
                       y="99"
@@ -196,13 +276,15 @@ export default function Home() {
             <div>
               <div className="flex items-center justify-between">
                 <h4 className="font-semibold">Local Leaderboard</h4>
-                <span className="text-xs text-white/60">Top Points</span>
               </div>
 
               {/* XP legend */}
               <p className="mt-1 text-[11px] text-white/50">
-                Earn points by sessions, streaks, and hosting missions.
+                Earn points by completing sessions, keeping streaks, and joining challenges.
               </p>
+              <div className="text-right">
+                <span className="text-xs text-white">Top Points</span>
+              </div>
 
               <ul className="mt-3 space-y-2">
                 {/* #1 */}
@@ -292,7 +374,7 @@ export default function Home() {
               </ul>
 
               <div className="mt-3 flex items-center justify-between text-xs text-white/70">
-                <span>Claim your spot. Earn your rank.</span>
+                <span>Claim your spot. Level up your game.</span>
                 <span className="rounded bg-[#E11D2F]/20 border border-[#E11D2F]/30 text-[#E11D2F] px-2 py-1">Early Access</span>
               </div>
             </div>
@@ -301,7 +383,7 @@ export default function Home() {
 
         {/* Footer */}
         <footer className="mt-20 border-t border-white/5 pt-8 text-white/70 text-sm">
-          Privacy-first • Rough location only • Report
+        Privacy-first • Member-only events, people stay private
         </footer>
       </div>
     </main>

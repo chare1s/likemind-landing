@@ -11,15 +11,19 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 /* Headline red gradient for "Win your goals" */
 .headline-accent {
   background-image: linear-gradient(90deg,
-    #E11D2F 0%,
+    #B0121B 0%,
     #ff4d5e 50%,
-    #ff7a86 100%);
+    #B0121B 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent; /* Safari */
   background-size: 100% 100%;
   background-position: 0% 50%;
+  text-shadow:
+    0 0 8px #B0121B,
+    0 0 15px #ff4d5e,
+    0 0 20px #B0121B;
 }
 
 /* Slightly deeper variant (optional) */
@@ -31,7 +35,8 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
     #C81627 100%);
   -webkit-background-clip: text;
   background-clip: text;
-  color: transparent;
+  color: inherit;
+  -webkit-text-fill-color: inherit;
 }
 
 /* Subtle text edge to keep thick display fonts crisp on dark bg */
