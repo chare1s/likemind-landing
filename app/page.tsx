@@ -313,7 +313,12 @@ export default function Home() {
                 Earn points by completing sessions, keeping streaks, and joining challenges.
               </p>
               <div className="text-right">
-                <span className="text-xs text-white">Top Points</span>
+                <span
+                  className="text-xs text-white font-bold"
+                  style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}
+                >
+                  Top Points
+                </span>
               </div>
 
               <ul className="mt-3 space-y-2">
@@ -324,7 +329,10 @@ export default function Home() {
                       <div className="h-8 w-8 rounded-full bg-[#E11D2F] grid place-content-center text-xs font-bold">1</div>
                       <div>
                         <div className="font-medium">Ben</div>
-                        <div className="text-xs text-white/60">Running • Iron Will</div>
+                        <div className="text-xs">
+                          <span className="text-white/60">Running • </span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Iron Will</span>
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -353,7 +361,10 @@ export default function Home() {
                       <div className="h-8 w-8 rounded-full bg-[#2F353D] grid place-content-center text-xs font-bold">2</div>
                       <div>
                         <div className="font-medium">Marcus</div>
-                        <div className="text-xs text-white/60">Running • Marathon Mind</div>
+                        <div className="text-xs">
+                          <span className="text-white/60">Running • </span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Marathon Mind</span>
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
@@ -381,7 +392,10 @@ export default function Home() {
                       <div className="h-8 w-8 rounded-full bg-[#2F353D] grid place-content-center text-xs font-bold">3</div>
                       <div>
                         <div className="font-medium">Nathan</div>
-                        <div className="text-xs text-white/60">Study • Scholar at Arms</div>
+                        <div className="text-xs">
+                          <span className="text-white/60">Study • </span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 6px rgba(255,255,255,0.35)', opacity: 1 }}>Discipline Driven</span>
+                        </div>
                       </div>
                     </div>
                     <div className="flex items-center gap-2">
