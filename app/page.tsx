@@ -135,7 +135,9 @@ export default function Home() {
         <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
           <div>
             <h1 className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
-              <span className="block">Find your likeminds.</span>
+              <span className="block">
+                Find your <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>likeminds</span>.
+              </span>
               <span className="block mt-[-0.4rem]">
                 <span
                   className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
@@ -164,7 +166,7 @@ export default function Home() {
               </span>
             </h1>
             <p className="mt-6 max-w-2xl text-white/80 text-lg">
-              LikeMind matches you with accountability partners near you. No fluff. No endless scrolling.
+              <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}><strong>LikeMind</strong></span> matches you with accountability partners near you. No fluff. No endless scrolling.
               Just progress with people who move like you do.
             </p>
 
