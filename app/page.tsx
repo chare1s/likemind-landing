@@ -127,7 +127,7 @@ export default function Home() {
         {/* Hero */}
         <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
           <div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl leading-[1.15] max-w-2xl">
+            <h1 className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
               <span className="block">Find your likeminds.</span>
               <span className="block mt-2">
                 <span
