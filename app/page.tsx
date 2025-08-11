@@ -129,9 +129,9 @@ export default function Home() {
           <div>
             <h1 className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
               <span className="block">Find your likeminds.</span>
-              <span className="block mt-2">
+              <span className="block mt-[-0.4rem]">
                 <span
-                  className="headline-accent headline-edge"
+                  className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
                   style={{
                     background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
                     WebkitBackgroundClip: 'text',
@@ -143,7 +143,7 @@ export default function Home() {
                   }}
                 >Win your </span>
                 <span
-                  className="headline-accent headline-edge"
+                  className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
                   style={{
                     background: 'linear-gradient(90deg, #e33957, #b71526)',
                     WebkitBackgroundClip: 'text',
