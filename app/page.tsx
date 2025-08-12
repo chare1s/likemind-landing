@@ -1,5 +1,6 @@
 "use client"
 import { useEffect } from 'react'
+import { motion, useReducedMotion } from 'framer-motion'
 
 export default function Home() {
   useEffect(() => {
@@ -8,6 +9,22 @@ export default function Home() {
       return () => document.documentElement.classList.remove('lm-ready')
     }
   }, [])
+
+  const prefersReducedMotion = useReducedMotion();
+
+  const fadeUp = {
+    hidden: { opacity: 0, y: 12 },
+    show:   { opacity: 1, y: 0 }
+  };
+
+  const containerStagger = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: prefersReducedMotion ? {} : { staggerChildren: 0.08, when: 'beforeChildren' }
+    }
+  };
+
   return (
     <main className="min-h-screen relative overflow-hidden text-[#F3F4F6]">
       {/* Background */}
@@ -157,15 +174,23 @@ export default function Home() {
 
         {/* Hero */}
         <div className="w-full aspect-[16/9]">
-        <section className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start">
-          <div>
-            <h1 className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
+        <motion.section
+          className="mt-14 grid md:grid-cols-[1.2fr_0.9fr] gap-12 lg:gap-16 items-start"
+          initial="hidden"
+          animate="show"
+          variants={containerStagger}
+        >
+          <motion.div variants={fadeUp}>
+            <motion.h1 variants={fadeUp} className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
               <span className="block">
                 Find your <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>likeminds</span>.
               </span>
               <span className="block mt-[-0.4rem]">
-                <span
+                <motion.span
                   className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
+                  initial={{ filter: prefersReducedMotion ? undefined : 'brightness(0.9)' }}
+                  animate={{ filter: prefersReducedMotion ? undefined : 'brightness(1)' }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                   style={{
                     background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
                     WebkitBackgroundClip: 'text',
@@ -173,11 +198,15 @@ export default function Home() {
                     WebkitTextFillColor: 'transparent',
                     opacity: 1,
                     textShadow: '0 0 8px rgba(225,29,47,0.5), 0 0 16px rgba(225,29,47,0.35)',
-                    fontWeight: 'normal'
+                    fontWeight: 'normal',
+                    filter: prefersReducedMotion ? undefined : 'brightness(0.9)'
                   }}
-                >Win your </span>
-                <span
+                >Win your </motion.span>
+                <motion.span
                   className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
+                  initial={{ filter: prefersReducedMotion ? undefined : 'brightness(0.9)' }}
+                  animate={{ filter: prefersReducedMotion ? undefined : 'brightness(1)' }}
+                  transition={{ duration: 0.8, ease: 'easeOut' }}
                   style={{
                     background: 'linear-gradient(90deg, #e33957, #b71526)',
                     WebkitBackgroundClip: 'text',
@@ -185,18 +214,19 @@ export default function Home() {
                     WebkitTextFillColor: 'transparent',
                     opacity: 1,
                     textShadow: '0 0 8px rgba(225,29,47,0.5), 0 0 16px rgba(225,29,47,0.35)',
-                    fontWeight: 'bold'
+                    fontWeight: 'bold',
+                    filter: prefersReducedMotion ? undefined : 'brightness(0.9)'
                   }}
-                >goals.</span>
+                >goals.</motion.span>
               </span>
-            </h1>
-            <p className="mt-6 max-w-2xl text-white/80 text-lg">
+            </motion.h1>
+            <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-white/80 text-lg">
               <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}><strong>LikeMind</strong></span> matches you with accountability partners near you. No fluff. No endless scrolling.
               Just progress with people who move like you do.
-            </p>
+            </motion.p>
 
             {/* Waitlist form */}
-            <form
+            <motion.form variants={fadeUp}
               action="https://formspree.io/f/mwpqavqa"
               method="POST"
               className="mt-8 flex gap-4 max-w-2xl self-start"
@@ -215,23 +245,24 @@ export default function Home() {
               >
                 Join waitlist
               </button>
-            </form>
+            </motion.form>
 
             <p className="mt-3 text-xs text-white/60">
               By joining you agree to receive early access emails. Unsubscribe anytime.
             </p>
 
             {/* Video placeholder */}
-            <div className="mt-8 w-full aspect-video bg-black/30"></div>
+            <motion.div variants={fadeUp} className="mt-8 w-full aspect-video bg-black/30" />
 
             {/* REMOVED: the scrolling slogan strip */}
-          </div>
+          </motion.div>
 
           {/* Mission Panel: Recon + Leaderboard (unified) */}
-          <div
+          <motion.div
+            variants={fadeUp}
             className="rounded-2xl border border-white/10 p-4 md:p-5 shadow-[0_0_30px_rgba(225,29,47,0.08)]"
             style={{
-          background: 'linear-gradient(145deg, rgba(225,29,47,0.08) 0%, rgba(28,33,40,0.75) 100%)'
+              background: 'linear-gradient(145deg, rgba(225,29,47,0.08) 0%, rgba(28,33,40,0.75) 100%)'
             }}
           >
             {/* Panel Header */}
@@ -276,7 +307,7 @@ export default function Home() {
                     </filter>
                   </defs>
                   {/* Running event */}
-                  <g>
+                  <motion.g initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 220, damping: 20, delay: 0.1 }}>
                     <circle
                       cx="102"
                       cy="122"
@@ -292,9 +323,9 @@ export default function Home() {
                       textAnchor="middle"
                       dominantBaseline="middle"
                     >👟</text>
-                  </g>
+                  </motion.g>
                   {/* Strength event */}
-                  <g>
+                  <motion.g initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 220, damping: 20, delay: 0.22 }}>
                     <circle
                       cx="255"
                       cy="170"
@@ -311,9 +342,9 @@ export default function Home() {
                       height="20"
                       filter="url(#toWhite)"
                     />
-                  </g>
+                  </motion.g>
                   {/* Study event */}
-                  <g>
+                  <motion.g initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }} transition={{ type: 'spring', stiffness: 220, damping: 20, delay: 0.34 }}>
                     <circle
                       cx="307"
                       cy="96"
@@ -329,7 +360,7 @@ export default function Home() {
                       textAnchor="middle"
                       dominantBaseline="middle"
                     >📚</text>
-                  </g>
+                  </motion.g>
                 </svg>
               </div>
             </div>
@@ -350,7 +381,7 @@ export default function Home() {
               <div className="text-right">
                 <span
                   className="text-xs text-white font-bold"
-                  style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}
+                  style={{ textShadow: '0 0 8px rgba(255,255,255,0.45), 0 0 16px rgba(255,255,255,0.2)', opacity: 1 }}
                 >
                   Top Points
                 </span>
@@ -366,7 +397,7 @@ export default function Home() {
                         <div className="font-medium">Ben</div>
                         <div className="text-xs">
                           <span className="text-white/60">Running • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Iron Will</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.45), 0 0 16px rgba(255,255,255,0.2)', opacity: 1 }}>Iron Will</span>
                         </div>
                       </div>
                     </div>
@@ -388,7 +419,13 @@ export default function Home() {
                   </div>
                   {/* Progress to next rank */}
                   <div className="xp-bar">
-                    <div className="xp-fill" style={{ width: '72%' }} />
+                    <motion.div
+                      className="xp-fill"
+                      initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
+                      animate={{ scaleX: 0.72 }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      style={{ transformOrigin: 'left' }}
+                    />
                   </div>
                 </li>
 
@@ -401,7 +438,7 @@ export default function Home() {
                         <div className="font-medium">Marcus</div>
                         <div className="text-xs">
                           <span className="text-white/60">Running • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Marathon Mind</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.45), 0 0 16px rgba(255,255,255,0.2)', opacity: 1 }}>Marathon Mind</span>
                         </div>
                       </div>
                     </div>
@@ -422,7 +459,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="xp-bar">
-                    <div className="xp-fill" style={{ width: '58%' }} />
+                    <motion.div
+                      className="xp-fill"
+                      initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
+                      animate={{ scaleX: 0.58 }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      style={{ transformOrigin: 'left' }}
+                    />
                   </div>
                 </li>
 
@@ -435,7 +478,7 @@ export default function Home() {
                         <div className="font-medium">Nathan</div>
                         <div className="text-xs">
                           <span className="text-white/60">Study • </span>
-                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.6), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>Discipline Driven</span>
+                          <span className="text-white/80 font-bold" style={{ textShadow: '0 0 8px rgba(255,255,255,0.45), 0 0 16px rgba(255,255,255,0.2)', opacity: 1 }}>Discipline Driven</span>
                         </div>
                       </div>
                     </div>
@@ -456,7 +499,13 @@ export default function Home() {
                     </div>
                   </div>
                   <div className="xp-bar">
-                    <div className="xp-fill" style={{ width: '44%' }} />
+                    <motion.div
+                      className="xp-fill"
+                      initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
+                      animate={{ scaleX: 0.44 }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      style={{ transformOrigin: 'left' }}
+                    />
                   </div>
                 </li>
               </ul>
@@ -466,8 +515,8 @@ export default function Home() {
                 <span className="rounded bg-[#E11D2F]/20 border border-[#E11D2F]/30 text-[#E11D2F] px-2 py-1">Early Access</span>
               </div>
             </div>
-          </div>
-        </section>
+          </motion.div>
+        </motion.section>
         </div>
 
         {/* Footer */}
