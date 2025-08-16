@@ -142,10 +142,6 @@ export default function Home() {
               className="h-28 w-auto object-contain"
               decoding="async"
               fetchPriority="high"
-              style={{
-                /* Subtle inner white glow + faint outer red halo + light base shadow */
-                filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25)) drop-shadow(0 0 3px rgba(255,255,255,0.35)) drop-shadow(0 0 8px rgba(225,29,47,0.22))'
-              }}
               onError={(e) => {
                 const img = e.currentTarget as HTMLImageElement;
                 // 1) Try without query param in case CDN blocks it
@@ -180,7 +176,8 @@ export default function Home() {
           animate="show"
           variants={containerStagger}
         >
-          <motion.div variants={fadeUp}>
+          {/* LEFT: TITLES ONLY (stagger step 1) */}
+          <motion.div variants={fadeUp} transition={{ duration: 0.55 }}>
             <motion.h1 variants={fadeUp} className="text-5xl md:text-[3.25rem] lg:text-[3.75rem] leading-[1.15] max-w-2xl">
               <span className="block">
                 Find your <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}>likeminds</span>.
@@ -190,7 +187,7 @@ export default function Home() {
                   className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
                   initial={{ filter: prefersReducedMotion ? undefined : 'brightness(0.9)' }}
                   animate={{ filter: prefersReducedMotion ? undefined : 'brightness(1)' }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  transition={{ duration: 1.05, ease: 'easeOut' }}
                   style={{
                     background: 'linear-gradient(90deg, #FF4D6D, #E11D2F)',
                     WebkitBackgroundClip: 'text',
@@ -206,7 +203,7 @@ export default function Home() {
                   className="headline-accent headline-edge text-[3.4rem] md:text-[4.6rem] lg:text-[4.7rem]"
                   initial={{ filter: prefersReducedMotion ? undefined : 'brightness(0.9)' }}
                   animate={{ filter: prefersReducedMotion ? undefined : 'brightness(1)' }}
-                  transition={{ duration: 0.8, ease: 'easeOut' }}
+                  transition={{ duration: 1.05, ease: 'easeOut' }}
                   style={{
                     background: 'linear-gradient(90deg, #e33957, #b71526)',
                     WebkitBackgroundClip: 'text',
@@ -220,6 +217,9 @@ export default function Home() {
                 >goals.</motion.span>
               </span>
             </motion.h1>
+          </motion.div>
+          {/* LEFT: REMAINDER (stagger step 3) */}
+          <motion.div variants={fadeUp} transition={{ duration: 0.55 }}>
             <motion.p variants={fadeUp} className="mt-6 max-w-2xl text-white/80 text-lg">
               <span style={{ textShadow: '0 0 8px rgba(255,255,255,0.5), 0 0 16px rgba(255,255,255,0.35)', opacity: 1 }}><strong>LikeMind</strong></span> matches you with accountability partners near you. No fluff. No endless scrolling.
               Just progress with people who move like you do.
@@ -253,13 +253,12 @@ export default function Home() {
 
             {/* Video placeholder */}
             <motion.div variants={fadeUp} className="mt-8 w-full aspect-video bg-black/30" />
-
-            {/* REMOVED: the scrolling slogan strip */}
           </motion.div>
 
           {/* Mission Panel: Recon + Leaderboard (unified) */}
           <motion.div
             variants={fadeUp}
+            transition={{ duration: 0.55 }}
             className="rounded-2xl border border-white/10 p-4 md:p-5 shadow-[0_0_30px_rgba(225,29,47,0.08)]"
             style={{
               background: 'linear-gradient(145deg, rgba(225,29,47,0.08) 0%, rgba(28,33,40,0.75) 100%)'
@@ -423,7 +422,7 @@ export default function Home() {
                       className="xp-fill"
                       initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
                       animate={{ scaleX: 0.72 }}
-                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 1.15, ease: 'easeOut' }}
                       style={{ transformOrigin: 'left' }}
                     />
                   </div>
@@ -463,7 +462,7 @@ export default function Home() {
                       className="xp-fill"
                       initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
                       animate={{ scaleX: 0.58 }}
-                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 1.15, ease: 'easeOut' }}
                       style={{ transformOrigin: 'left' }}
                     />
                   </div>
@@ -503,7 +502,7 @@ export default function Home() {
                       className="xp-fill"
                       initial={{ scaleX: prefersReducedMotion ? 1 : 0 }}
                       animate={{ scaleX: 0.44 }}
-                      transition={{ duration: prefersReducedMotion ? 0 : 0.9, ease: 'easeOut' }}
+                      transition={{ duration: prefersReducedMotion ? 0 : 1.15, ease: 'easeOut' }}
                       style={{ transformOrigin: 'left' }}
                     />
                   </div>
